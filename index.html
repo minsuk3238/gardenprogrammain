@@ -9,59 +9,55 @@
     <style>
         body { font-family: 'Nanum Square Round', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); color: #040000; }
         .responsive-text { word-break: keep-all; }
-        /* 제목 영역 높이를 고정하여 막대 위치를 통일합니다 */
-        .title-height { min-height: 4rem; display: flex; align-items: center; justify-content: center; }
+        /* 모바일과 데스크톱에서 각각 최적의 고정 높이를 주어 아래 막대 일직선 정렬 유지 */
+        .title-height { min-height: 3.5rem; display: flex; align-items: center; justify-content: center; }
+        @media (min-width: 768px) {
+            .title-height { min-height: 4rem; }
+        }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen flex flex-col justify-between">
 
-    <!-- 우측 상단 번역 안내 버튼 -->
     <div class="fixed top-4 right-4 z-40">
-        <button onclick="openTransModal()" class="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-slate-200 px-3 py-2 rounded-full text-xs md:text-sm font-bold text-slate-600 hover:bg-white shadow-sm transition-all">
+        <button onclick="openTransModal()" class="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm border border-slate-200 px-3 py-1.5 rounded-full text-xs md:text-sm font-bold text-slate-600 hover:bg-white shadow-sm transition-all">
             <span>🌐</span> 언어
         </button>
     </div>
 
-    <header class="py-12 md:py-16 px-4 text-center">
-        <h1 class="text-2xl md:text-5xl font-bold mb-4" style="color: #040000;">스누피가든 프로그램</h1>
-        <p class="text-slate-600 text-base md:text-lg">스누피와 함께하는 즐거운 야외 프로그램을 즐겨보세요!</p>
+    <header class="pt-10 pb-6 md:py-16 px-4 text-center">
+        <h1 class="text-xl md:text-5xl font-bold mb-2 md:mb-4" style="color: #040000;">스누피가든 프로그램</h1>
+        <p class="text-slate-600 text-xs md:text-lg">스누피와 함께하는 즐거운 야외 프로그램을 즐겨보세요!</p>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 pb-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+    <main class="max-w-6xl mx-auto w-full px-2 md:px-4 pb-10">
+        <div class="grid grid-cols-3 gap-2 md:gap-8">
             
-            <!-- Program 1: 가든 스탬프 투어 -->
-            <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
+            <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
                 onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', '#008fd5', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
-                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-sky-50 transition-transform group-hover:rotate-12" style="color: #008fd5;">🐾</div>
-                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text title-height">가든 스탬프 투어</h2>
-                <div class="w-12 h-1 bg-sky-400 rounded-full mb-4"></div>
-                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
+                <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-6 text-2xl md:text-4xl shadow-inner bg-sky-50 transition-transform group-hover:rotate-12" style="color: #008fd5;">🐾</div>
+                <h2 class="text-xs md:text-2xl font-bold mb-2 md:mb-3 responsive-text title-height">가든 스탬프<br class="md:hidden"> 투어</h2>
+                <div class="w-8 md:w-12 h-0.5 md:h-1 bg-sky-400 rounded-full mb-3 md:mb-4"></div>
+                <p class="text-slate-600 text-xs leading-relaxed responsive-text hidden md:block">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
             </section>
 
-            <!-- Program 2: 가드너 클래스:<br>나무 찾기 미션 -->
-            <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
+            <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
                 onclick="openModal('가드너 클래스: 나무 찾기 미션', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!'])">
-                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-green-50 transition-transform group-hover:scale-110" style="color: #2c9942;">🌿</div>
-                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text title-height block">
-    가드너 클래스:<br>나무 찾기 미션
-</h2>
-                <div class="w-12 h-1 bg-green-500 rounded-full mb-4"></div>
-                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!</p>
+                <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-6 text-2xl md:text-4xl shadow-inner bg-green-50 transition-transform group-hover:scale-110" style="color: #2c9942;">🌿</div>
+                <h2 class="text-xs md:text-2xl font-bold mb-2 md:mb-3 responsive-text title-height">가드너 클래스:<br>나무 찾기 미션</h2>
+                <div class="w-8 md:w-12 h-0.5 md:h-1 bg-green-500 rounded-full mb-3 md:mb-4"></div>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text hidden md:block">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!</p>
             </section>
 
-            <!-- Program 3: SNOOPY GARDEN QUEST -->
-            <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
+            <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
                 onclick="openModal('SNOOPY GARDEN QUEST', 'https://snoopytest-mu.vercel.app', '💌', '#f7941c', '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!', ['비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
-                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-orange-50 transition-transform group-hover:-rotate-12" style="color: #f7941c;">💌</div>
-                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text title-height">SNOOPY GARDEN QUEST</h2>
-                <div class="w-12 h-1 bg-orange-400 rounded-full mb-4"></div>
-                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
+                <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-6 text-2xl md:text-4xl shadow-inner bg-orange-50 transition-transform group-hover:-rotate-12" style="color: #f7941c;">💌</div>
+                <h2 class="text-xs md:text-2xl font-bold mb-2 md:mb-3 responsive-text title-height">SNOOPY<br class="md:hidden"> GARDEN QUEST</h2>
+                <div class="w-8 md:w-12 h-0.5 md:h-1 bg-orange-400 rounded-full mb-3 md:mb-4"></div>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text hidden md:block">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
             </section>
         </div>
     </main>
 
-    <!-- 프로그램 안내 모달 -->
     <div id="modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
         <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
@@ -73,7 +69,6 @@
         </div>
     </div>
 
-    <!-- 번역 안내 모달 -->
     <div id="trans-modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
         <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeTransModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
@@ -86,7 +81,7 @@
         </div>
     </div>
 
-    <footer class="text-center p-8 text-slate-400 text-xs">
+    <footer class="text-center p-4 text-slate-400 text-[10px] md:text-xs">
         <p>&copy; Snoopy Garden Outdoor Programs</p>
     </footer>
 
