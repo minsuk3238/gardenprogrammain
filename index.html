@@ -8,11 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Square+Round&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Nanum Square Round', sans-serif; background-color: #ffffff; color: #040000; }
-        .text-sub { color: #2c9942; }
-        .bg-sub { background-color: #2c9942; }
     </style>
 </head>
 <body class="min-h-screen">
+
+    <!-- 우측 상단 번역 안내 버튼 -->
+    <div class="fixed top-4 right-4 z-40">
+        <button onclick="openTransModal()" class="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-slate-200 px-4 py-2 rounded-full text-sm font-bold text-slate-600 hover:bg-slate-100 shadow-sm transition-all">
+            <span>🌐</span> 언어 / Language
+        </button>
+    </div>
 
     <header class="py-12 px-4 text-center">
         <h1 class="text-3xl md:text-4xl font-bold mb-2" style="color: #040000;">스누피가든 프로그램</h1>
@@ -21,7 +26,6 @@
 
     <main class="max-w-6xl mx-auto px-4 pb-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
             <!-- Program 1: 가든 스탬프 투어 -->
             <section class="rounded-3xl p-8 shadow-lg border border-slate-200 flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 bg-white" 
                 onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', '#008fd5', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
@@ -45,71 +49,62 @@
                 <h2 class="text-2xl font-bold mb-4">SNOOPY GARDEN QUEST</h2>
                 <p class="text-slate-600 text-sm leading-relaxed">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
             </section>
-
         </div>
     </main>
 
-    <!-- 팝업 모달 -->
+    <!-- 프로그램 안내 모달 -->
     <div id="modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
         <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
             <div id="modal-icon" class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6 text-4xl"></div>
             <h3 id="modal-title" class="text-2xl font-bold text-center mb-4 text-[#040000]"></h3>
             <p id="modal-desc" class="text-slate-600 text-center text-sm mb-6 italic leading-relaxed"></p>
-            
-            <div id="modal-content" class="text-slate-700 mb-8 space-y-4 text-sm bg-slate-50 p-6 rounded-2xl">
-                <!-- 이용 방법이 동적으로 들어옵니다 -->
-            </div>
-            
-            <a id="modal-link" href="#" target="_blank" class="block w-full text-center text-white py-4 rounded-xl font-bold hover:opacity-90 transition-opacity">
-                바로가기
-            </a>
+            <div id="modal-content" class="text-slate-700 mb-8 space-y-4 text-sm bg-slate-50 p-6 rounded-2xl"></div>
+            <a id="modal-link" href="#" target="_blank" class="block w-full text-center text-white py-4 rounded-xl font-bold hover:opacity-90 transition-opacity">바로가기</a>
         </div>
     </div>
+
+    <!-- 번역 안내 모달 -->
+    <div id="trans-modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
+            <button onclick="closeTransModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
+            <h3 class="text-xl font-bold text-center mb-6">Language / 语言</h3>
+            <div class="space-y-4 text-sm text-slate-700">
+                <p><strong>English:</strong> Use the "Translate" feature in your browser's menu to view this page in English.</p>
+                <p><strong>中文:</strong> 使用浏览器菜单中的“翻译”功能，即可查看网页的中文版本。</p>
+            </div>
+            <button onclick="closeTransModal()" class="mt-8 w-full py-3 bg-slate-800 text-white rounded-xl font-bold">확인</button>
+        </div>
+    </div>
+
+    <footer class="text-center p-8 text-slate-400 text-sm">
+        <p>&copy; Snoopy Garden Outdoor Programs</p>
+    </footer>
 
     <script>
         function openModal(title, url, icon, color, desc, steps) {
             const modal = document.getElementById('modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDesc = document.getElementById('modal-desc');
-            const modalLink = document.getElementById('modal-link');
-            const modalIcon = document.getElementById('modal-icon');
-            const modalContent = document.getElementById('modal-content');
-            
-            modalTitle.innerText = title;
-            modalDesc.innerHTML = desc;
-            modalLink.href = url;
-            modalIcon.innerText = icon;
-            
-            modalContent.innerHTML = steps.map((step, index) => `
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerHTML = desc;
+            document.getElementById('modal-link').href = url;
+            document.getElementById('modal-icon').innerText = icon;
+            document.getElementById('modal-content').innerHTML = steps.map((step, index) => `
                 <div class="flex items-start gap-3">
                     <span class="flex-shrink-0 font-extrabold text-xs px-2 py-1 rounded-md bg-slate-200 text-slate-600">Step ${index + 1}</span>
                     <span class="leading-relaxed break-keep text-slate-700">${step}</span>
                 </div>
             `).join('');
             
-            modalIcon.style.backgroundColor = color + '20';
-            modalIcon.style.color = color;
-            modalLink.style.backgroundColor = color;
-
+            const iconEl = document.getElementById('modal-icon');
+            iconEl.style.backgroundColor = color + '20';
+            iconEl.style.color = color;
+            document.getElementById('modal-link').style.backgroundColor = color;
             modal.classList.remove('hidden');
         }
 
-        function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+        function closeModal() { document.getElementById('modal').classList.add('hidden'); }
+        function openTransModal() { document.getElementById('trans-modal').classList.remove('hidden'); }
+        function closeTransModal() { document.getElementById('trans-modal').classList.add('hidden'); }
     </script>
-
-    <footer class="text-center p-8 text-slate-400 text-sm">
-        &copy; Snoopy Garden Outdoor Programs
-    </footer>
-
 </body>
 </html>
