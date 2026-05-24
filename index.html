@@ -7,13 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Square+Round&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Nanum Square Round', sans-serif; }
+        body { font-family: 'Nanum Square Round', sans-serif; background-color: #ffffff; color: #040000; }
+        .text-sub { color: #2c9942; }
+        .bg-sub { background-color: #2c9942; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen text-slate-800">
+<body class="min-h-screen">
 
     <header class="py-12 px-4 text-center">
-        <h1 class="text-3xl md:text-4xl font-bold text-sky-600 mb-2">스누피가든 프로그램</h1>
+        <h1 class="text-3xl md:text-4xl font-bold mb-2" style="color: #040000;">스누피가든 프로그램</h1>
         <p class="text-slate-600">스누피와 함께하는 즐거운 야외 프로그램을 즐겨보세요!</p>
     </header>
 
@@ -21,27 +23,27 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <!-- Program 1: 가든 스탬프 투어 -->
-            <section class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1" 
-                onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', 'sky', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
-                <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6 text-sky-600 text-3xl">🐾</div>
+            <section class="rounded-3xl p-8 shadow-lg border border-slate-200 flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 bg-white" 
+                onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', '#008fd5', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-3xl" style="background-color: #e0f2fe; color: #008fd5;">🐾</div>
                 <h2 class="text-2xl font-bold mb-4">가든 스탬프 투어</h2>
-                <p class="text-slate-500 text-sm leading-relaxed">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
+                <p class="text-slate-600 text-sm leading-relaxed">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
             </section>
 
             <!-- Program 2: 재미있는 나무 이름 찾기 -->
-            <section class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1" 
-                onclick="openModal('재미있는 나무 이름 찾기', 'https://plantclass.vercel.app', '🌿', 'emerald', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>11가지 나무의 설명을 읽고<br>퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!'])">
-                <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-6 text-emerald-600 text-3xl">🌿</div>
+            <section class="rounded-3xl p-8 shadow-lg border border-slate-200 flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 bg-white" 
+                onclick="openModal('재미있는 나무 이름 찾기', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>11가지 나무의 설명을 읽고<br>퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!'])">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-3xl" style="background-color: #e6f4e9; color: #2c9942;">🌿</div>
                 <h2 class="text-2xl font-bold mb-4">재미있는 나무 이름 찾기</h2>
-                <p class="text-slate-500 text-sm leading-relaxed">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>11가지 나무의 설명을 읽고<br>퀴즈를 풀어보세요!</p>
+                <p class="text-slate-600 text-sm leading-relaxed">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>11가지 나무의 설명을 읽고<br>퀴즈를 풀어보세요!</p>
             </section>
 
             <!-- Program 3: SNOOPY GARDEN QUEST -->
-            <section class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1" 
-                onclick="openModal('SNOOPY GARDEN QUEST', 'https://snoopytest-mu.vercel.app', '🎬', 'amber', '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!', ['비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
-                <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 text-amber-600 text-3xl">🎬</div>
+            <section class="rounded-3xl p-8 shadow-lg border border-slate-200 flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 bg-white" 
+                onclick="openModal('SNOOPY GARDEN QUEST', 'https://snoopytest-mu.vercel.app', '💌', '#f7941c', '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!', ['비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-3xl" style="background-color: #fff7ed; color: #f7941c;">💌</div>
                 <h2 class="text-2xl font-bold mb-4">SNOOPY GARDEN QUEST</h2>
-                <p class="text-slate-500 text-sm leading-relaxed">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
+                <p class="text-slate-600 text-sm leading-relaxed">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
             </section>
 
         </div>
@@ -52,8 +54,8 @@
         <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
             <div id="modal-icon" class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6 text-4xl"></div>
-            <h3 id="modal-title" class="text-2xl font-bold text-center mb-4"></h3>
-            <p id="modal-desc" class="text-slate-500 text-center text-sm mb-6 italic leading-relaxed"></p>
+            <h3 id="modal-title" class="text-2xl font-bold text-center mb-4 text-[#040000]"></h3>
+            <p id="modal-desc" class="text-slate-600 text-center text-sm mb-6 italic leading-relaxed"></p>
             
             <div id="modal-content" class="text-slate-700 mb-8 space-y-4 text-sm bg-slate-50 p-6 rounded-2xl">
                 <!-- 이용 방법이 동적으로 들어옵니다 -->
@@ -79,7 +81,6 @@
             modalLink.href = url;
             modalIcon.innerText = icon;
             
-            // 이용 순서 생성 - Step 표시 및 정렬
             modalContent.innerHTML = steps.map((step, index) => `
                 <div class="flex items-start gap-3">
                     <span class="flex-shrink-0 font-extrabold text-xs px-2 py-1 rounded-md bg-slate-200 text-slate-600">Step ${index + 1}</span>
@@ -87,19 +88,9 @@
                 </div>
             `).join('');
             
-            const colorMap = {
-                'sky': 'bg-sky-100 text-sky-600',
-                'emerald': 'bg-emerald-100 text-emerald-600',
-                'amber': 'bg-amber-100 text-amber-600'
-            };
-            const btnColorMap = {
-                'sky': 'bg-sky-500',
-                'emerald': 'bg-emerald-500',
-                'amber': 'bg-amber-500'
-            };
-            
-            modalIcon.className = `w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6 text-4xl ${colorMap[color]}`;
-            modalLink.className = `block w-full text-center text-white py-4 rounded-xl font-bold hover:opacity-90 transition-opacity ${btnColorMap[color]}`;
+            modalIcon.style.backgroundColor = color + '20';
+            modalIcon.style.color = color;
+            modalLink.style.backgroundColor = color;
 
             modal.classList.remove('hidden');
         }
