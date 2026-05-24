@@ -9,6 +9,8 @@
     <style>
         body { font-family: 'Nanum Square Round', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); color: #040000; }
         .responsive-text { word-break: keep-all; }
+        /* 제목 영역 높이를 고정하여 막대 위치를 통일합니다 */
+        .title-height { min-height: 4rem; display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
 <body class="min-h-screen">
@@ -32,25 +34,25 @@
             <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
                 onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', '#008fd5', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-sky-50 transition-transform group-hover:rotate-12" style="color: #008fd5;">🐾</div>
-                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text">가든 스탬프 투어</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text title-height">가든 스탬프 투어</h2>
                 <div class="w-12 h-1 bg-sky-400 rounded-full mb-4"></div>
                 <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
             </section>
 
             <!-- Program 2: 초록 도감 퀴즈 -->
             <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
-                onclick="openModal('초록 도감 퀴즈', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무의 설명을 읽고 퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!'])">
+                onclick="openModal('초록 도감 퀴즈', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!'])">
                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-green-50 transition-transform group-hover:scale-110" style="color: #2c9942;">🌿</div>
-                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text">초록 도감 퀴즈</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text title-height">초록 도감 퀴즈</h2>
                 <div class="w-12 h-1 bg-green-500 rounded-full mb-4"></div>
-                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무의 설명을 읽고 퀴즈를 풀어보세요!</p>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!</p>
             </section>
 
             <!-- Program 3: SNOOPY GARDEN QUEST -->
             <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
                 onclick="openModal('SNOOPY GARDEN QUEST', 'https://snoopytest-mu.vercel.app', '💌', '#f7941c', '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!', ['비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-orange-50 transition-transform group-hover:-rotate-12" style="color: #f7941c;">💌</div>
-                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text">SNOOPY GARDEN QUEST</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text title-height">SNOOPY GARDEN QUEST</h2>
                 <div class="w-12 h-1 bg-orange-400 rounded-full mb-4"></div>
                 <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
             </section>
