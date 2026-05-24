@@ -8,72 +8,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Square+Round&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Nanum Square Round', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); color: #040000; }
+        .responsive-text { word-break: keep-all; }
     </style>
 </head>
 <body class="min-h-screen">
 
     <!-- 우측 상단 번역 안내 버튼 -->
     <div class="fixed top-4 right-4 z-40">
-        <button onclick="openTransModal()" class="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-slate-200 px-4 py-2 rounded-full text-sm font-bold text-slate-600 hover:bg-white shadow-sm transition-all">
-            <span>🌐</span> 언어 / Language
+        <button onclick="openTransModal()" class="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-slate-200 px-3 py-2 rounded-full text-xs md:text-sm font-bold text-slate-600 hover:bg-white shadow-sm transition-all">
+            <span>🌐</span> 언어
         </button>
     </div>
 
-    <header class="py-16 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: #040000;">스누피가든 프로그램</h1>
-        <p class="text-slate-600 text-lg">스누피와 함께하는 즐거운 야외 프로그램을 즐겨보세요!</p>
+    <header class="py-12 md:py-16 px-4 text-center">
+        <h1 class="text-2xl md:text-5xl font-bold mb-4" style="color: #040000;">스누피가든 프로그램</h1>
+        <p class="text-slate-600 text-base md:text-lg">스누피와 함께하는 즐거운 야외 프로그램을 즐겨보세요!</p>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 pb-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             
             <!-- Program 1: 가든 스탬프 투어 -->
-            <section class="group rounded-3xl p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
+            <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
                 onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', '#008fd5', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
-                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-inner bg-sky-50 transition-transform group-hover:rotate-12" style="color: #008fd5;">🐾</div>
-                <h2 class="text-2xl font-bold mb-3">가든 스탬프 투어</h2>
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-sky-50 transition-transform group-hover:rotate-12" style="color: #008fd5;">🐾</div>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text">가든 스탬프 투어</h2>
                 <div class="w-12 h-1 bg-sky-400 rounded-full mb-4"></div>
-                <p class="text-slate-600 text-sm leading-relaxed">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
             </section>
 
             <!-- Program 2: 초록 도감 퀴즈 -->
-            <section class="group rounded-3xl p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
+            <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
                 onclick="openModal('초록 도감 퀴즈', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>11가지 나무의 설명을 읽고<br>퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!'])">
-                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-inner bg-green-50 transition-transform group-hover:scale-110" style="color: #2c9942;">🌿</div>
-                <h2 class="text-2xl font-bold mb-3">초록 도감 퀴즈</h2>
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-green-50 transition-transform group-hover:scale-110" style="color: #2c9942;">🌿</div>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text">초록 도감 퀴즈</h2>
                 <div class="w-12 h-1 bg-green-500 rounded-full mb-4"></div>
-                <p class="text-slate-600 text-sm leading-relaxed">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>11가지 나무의 설명을 읽고<br>퀴즈를 풀어보세요!</p>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>11가지 나무의 설명을 읽고<br>퀴즈를 풀어보세요!</p>
             </section>
 
             <!-- Program 3: SNOOPY GARDEN QUEST -->
-            <section class="group rounded-3xl p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
+            <section class="group rounded-3xl p-6 md:p-8 shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-2 bg-white" 
                 onclick="openModal('SNOOPY GARDEN QUEST', 'https://snoopytest-mu.vercel.app', '💌', '#f7941c', '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!', ['비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
-                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-inner bg-orange-50 transition-transform group-hover:-rotate-12" style="color: #f7941c;">💌</div>
-                <h2 class="text-2xl font-bold mb-3">GARDEN QUEST</h2>
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-3xl md:text-4xl shadow-inner bg-orange-50 transition-transform group-hover:-rotate-12" style="color: #f7941c;">💌</div>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 responsive-text">SNOOPY GARDEN QUEST</h2>
                 <div class="w-12 h-1 bg-orange-400 rounded-full mb-4"></div>
-                <p class="text-slate-600 text-sm leading-relaxed">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text">피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!</p>
             </section>
         </div>
     </main>
 
     <!-- 프로그램 안내 모달 -->
     <div id="modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
-        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
-            <div id="modal-icon" class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6 text-5xl"></div>
-            <h3 id="modal-title" class="text-2xl font-bold text-center mb-4 text-[#040000]"></h3>
-            <p id="modal-desc" class="text-slate-600 text-center text-sm mb-6 italic leading-relaxed"></p>
-            <div id="modal-content" class="text-slate-700 mb-8 space-y-4 text-sm bg-slate-50 p-6 rounded-2xl"></div>
-            <a id="modal-link" href="#" target="_blank" class="block w-full text-center text-white py-4 rounded-xl font-bold hover:opacity-90 transition-opacity">바로가기</a>
+            <div id="modal-icon" class="w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full flex items-center justify-center mb-6 text-4xl md:text-5xl"></div>
+            <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-center mb-4 text-[#040000]"></h3>
+            <p id="modal-desc" class="text-slate-600 text-center text-xs md:text-sm mb-6 italic leading-relaxed"></p>
+            <div id="modal-content" class="text-slate-700 mb-8 space-y-4 text-xs md:text-sm bg-slate-50 p-4 md:p-6 rounded-2xl"></div>
+            <a id="modal-link" href="#" target="_blank" class="block w-full text-center text-white py-3 md:py-4 rounded-xl font-bold hover:opacity-90 transition-opacity">바로가기</a>
         </div>
     </div>
 
     <!-- 번역 안내 모달 -->
     <div id="trans-modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
-        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeTransModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
-            <h3 class="text-xl font-bold text-center mb-6">Language / 语言</h3>
-            <div class="space-y-4 text-sm text-slate-700">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-6">Language / 语言</h3>
+            <div class="space-y-4 text-xs md:text-sm text-slate-700">
                 <p><strong>English:</strong> Use the "Translate" feature in your browser's menu to view this page in English.</p>
                 <p><strong>中文:</strong> 使用浏览器菜单中的“翻译”功能，即可查看网页的中文版本。</p>
             </div>
@@ -81,7 +82,7 @@
         </div>
     </div>
 
-    <footer class="text-center p-8 text-slate-400 text-sm">
+    <footer class="text-center p-8 text-slate-400 text-xs">
         <p>&copy; Snoopy Garden Outdoor Programs</p>
     </footer>
 
@@ -94,7 +95,7 @@
             document.getElementById('modal-icon').innerText = icon;
             document.getElementById('modal-content').innerHTML = steps.map((step, index) => `
                 <div class="flex items-start gap-3">
-                    <span class="flex-shrink-0 font-extrabold text-xs px-2 py-1 rounded-md bg-slate-200 text-slate-600">Step ${index + 1}</span>
+                    <span class="flex-shrink-0 font-extrabold text-[10px] md:text-xs px-2 py-1 rounded-md bg-slate-200 text-slate-600">Step ${index + 1}</span>
                     <span class="leading-relaxed break-keep text-slate-700">${step}</span>
                 </div>
             `).join('');
