@@ -45,6 +45,7 @@
     <main class="max-w-6xl mx-auto w-full px-2 md:px-4 pb-10">
         <div class="grid grid-cols-3 gap-2 md:gap-8">
             
+            <!-- 1. 가든 스탬프 투어 -->
             <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
                 onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', '#008fd5', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
                 <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-4 text-2xl md:text-4xl shadow-inner bg-sky-50 transition-transform group-hover:rotate-12" style="color: #008fd5;">🐾</div>
@@ -57,8 +58,9 @@
                 <p class="text-slate-600 text-xs leading-relaxed responsive-text hidden md:block">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
             </section>
 
+            <!-- 2. 가드너 클래스 (STEP 4 추가됨) -->
             <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
-                onclick="openModal('가드너 클래스: 나무 찾기 미션', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!'])">
+                onclick="openModal('가드너 클래스: 나무 찾기 미션', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
                 <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-4 text-2xl md:text-4xl shadow-inner bg-green-50 transition-transform group-hover:scale-110" style="color: #2c9942;">🌿</div>
                 
                 <div class="title-container mb-2 md:mb-3">
@@ -69,6 +71,7 @@
                 <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text hidden md:block">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!</p>
             </section>
 
+            <!-- 3. SNOOPY GARDEN QUEST -->
             <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
                 onclick="openModal('SNOOPY GARDEN QUEST', 'https://snoopytest-mu.vercel.app', '💌', '#f7941c', '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!', ['비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
                 <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-4 text-2xl md:text-4xl shadow-inner bg-orange-50 transition-transform group-hover:-rotate-12" style="color: #f7941c;">💌</div>
@@ -83,6 +86,7 @@
         </div>
     </main>
 
+    <!-- 상세 안내 모달 -->
     <div id="modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
         <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
@@ -94,6 +98,7 @@
         </div>
     </div>
 
+    <!-- 언어 안내 모달 -->
     <div id="trans-modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center p-4 z-50 backdrop-blur-sm">
         <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl relative">
             <button onclick="closeTransModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
