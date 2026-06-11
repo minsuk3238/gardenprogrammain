@@ -48,14 +48,13 @@
 
     <header class="pt-12 pb-6 md:py-16 px-4 text-center">
         <h1 class="text-xl md:text-5xl font-bold mb-2 md:mb-4" style="color: #040000;">스누피가든 프로그램</h1>
-        <p class="text-slate-600 text-xs md:text-lg">스누피와 함께하는 즐거운 야외 프로그램을 즐겨보세요!</p>
+        <p class="text-slate-600 text-xs md:text-lg">피너츠 친구들과 함께하는 즐거운 야외 프로그램을 즐겨보세요!</p>
     </header>
 
     <main class="max-w-6xl mx-auto w-full px-2 md:px-4 pb-10">
         <div class="grid grid-cols-3 gap-2 md:gap-8">
             
-            <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
-                onclick="openModal('가든 스탬프 투어', 'https://snoopy.jstamp.net/login', '🐾', '#008fd5', '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.', ['카카오톡, Google, Apple 계정으로 로그인합니다.', '스탬프 투어 메뉴를 클릭하세요.', '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'])">
+            <section class="program-card group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" data-id="stamp">
                 <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-4 text-2xl md:text-4xl shadow-inner bg-sky-50 transition-transform group-hover:rotate-12" style="color: #008fd5;">🐾</div>
                 
                 <div class="title-container mb-2 md:mb-3">
@@ -66,8 +65,7 @@
                 <p class="text-slate-600 text-xs leading-relaxed responsive-text hidden md:block">발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.</p>
             </section>
 
-            <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
-                onclick="openModal('가드너 클래스: 나무 찾기 미션', 'https://plantclass.vercel.app', '🌿', '#2c9942', '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!', ['지도에 표시된 핀을 순서대로 따라가 보세요.', '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', '최종 테스트를 완료하고 디지털 인증서를 받아보세요!', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
+            <section class="program-card group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" data-id="tree">
                 <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-4 text-2xl md:text-4xl shadow-inner bg-green-50 transition-transform group-hover:scale-110" style="color: #2c9942;">🌿</div>
                 
                 <div class="title-container mb-2 md:mb-3">
@@ -78,12 +76,11 @@
                 <p class="text-slate-600 text-xs md:text-sm leading-relaxed responsive-text hidden md:block">야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!</p>
             </section>
 
-            <section class="group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" 
-                onclick="openModal('SNOOPY GARDEN QUEST', 'https://snoopytest-mu.vercel.app', '💌', '#f7941c', '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!', ['비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'])">
+            <section class="program-card group rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-md md:shadow-xl border border-white flex flex-col items-center text-center cursor-pointer hover:shadow-2xl transition-all hover:-translate-y-1 md:hover:-translate-y-2 bg-white" data-id="quest">
                 <div class="w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-4 text-2xl md:text-4xl shadow-inner bg-orange-50 transition-transform group-hover:-rotate-12" style="color: #f7941c;">💌</div>
                 
                 <div class="title-container mb-2 md:mb-3">
-                    <h2 class="text-xs md:text-2xl font-bold responsive-text">SNOOPY GARDEN QUEST</h2>
+                    <h2 class="text-xs md:text-2xl font-bold responsive-text">가든 퀘스트</h2>
                 </div>
                 
                 <div class="w-8 md:w-12 h-0.5 md:h-1 bg-orange-400 rounded-full mb-3 md:mb-4"></div>
@@ -120,16 +117,67 @@
     </footer>
 
     <script>
-        // 현재 열려있는 모달의 정보를 임시 저장할 변수
+        // 프로그램 상세 데이터 모음 (HTML 태그를 깔끔하게 유지하기 위해 분리)
+        const programsData = {
+            'stamp': {
+                title: '가든 스탬프 투어',
+                url: 'https://snoopy.jstamp.net/login',
+                icon: '🐾',
+                color: '#008fd5',
+                desc: '발바닥 모양을 눌러 스탬프를 찍고,<br>퀴즈를 풀어 스탬프를 모아보세요.',
+                steps: [
+                    '카카오톡, Google, Apple 계정으로 로그인합니다.', 
+                    '스탬프 투어 메뉴를 클릭하세요.', 
+                    '발바닥 아이콘을 누르고, 가든 곳곳에 비치된 스탬프를 찍어보세요.', 
+                    '스탬프 8개를 모두 모으면, 스토어에서 소정의 기념품을 받을 수 있습니다.'
+                ]
+            },
+            'tree': {
+                title: '가드너 클래스: 나무 찾기 미션',
+                url: 'https://plantclass.vercel.app',
+                icon: '🌿',
+                color: '#2c9942',
+                desc: '야외 가든 지도를 열고<br>반짝이는 핀을 찾아가세요!<br>나무 설명을 읽고 퀴즈를 풀어보세요!',
+                steps: [
+                    '지도에 표시된 핀을 순서대로 따라가 보세요.', 
+                    '각 나무에 해당하는 퀴즈를 모두 풀어보세요.', 
+                    '최종 테스트를 완료하고 디지털 인증서를 받아보세요!', 
+                    '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'
+                ]
+            },
+            'quest': {
+                title: '가든 퀘스트',
+                url: 'https://snoopytest-mu.vercel.app',
+                icon: '💌',
+                color: '#f7941c',
+                desc: '피너츠 친구들과 함께<br>힌트를 따라 엽서를 찾고,<br>숨겨진 QR코드를 스캔해 보세요!',
+                steps: [
+                    '비글 스카우트 또는 찰리 브라운 중 함께할 친구를 선택하세요.', 
+                    '힌트를 따라 엽서를 찾고 숨겨진 QR 코드를 스캔하세요.', 
+                    '코스를 완료한 후 간단한 설문조사를 진행해 주세요.', 
+                    '설문 완료 화면을 매표소에 제시하면 소정의 리워드를 수령할 수 있습니다.'
+                ]
+            }
+        };
+
         let currentProgramTitle = "";
 
-        function openModal(title, url, icon, color, desc, steps) {
-            currentProgramTitle = title; // 이벤트 추적을 위해 타이틀 저장
-            
-            // [GA4 이벤트] 사용자가 카드 아이템을 클릭해 모달을 열었을 때
-            gtag('event', 'view_program_detail', {
-                'program_name': title
+        // 카드 클릭 이벤트 리스너 등록
+        document.querySelectorAll('.program-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const programId = this.getAttribute('data-id');
+                const data = programsData[programId];
+                if(data) {
+                    openModal(data.title, data.url, data.icon, data.color, data.desc, data.steps);
+                }
             });
+        });
+
+        function openModal(title, url, icon, color, desc, steps) {
+            currentProgramTitle = title; 
+            
+            // [GA4 이벤트]
+            gtag('event', 'view_program_detail', { 'program_name': title });
 
             const modal = document.getElementById('modal');
             document.getElementById('modal-title').innerText = title;
@@ -150,7 +198,7 @@
             modal.classList.remove('hidden');
         }
 
-        // [GA4 이벤트] 모달 내부의 '바로가기' 버튼을 눌렀을 때 외부 링크 이동 추적
+        // [GA4 이벤트] 외부 링크 이동 추적
         function trackClick() {
             gtag('event', 'click_program_link', {
                 'program_name': currentProgramTitle,
